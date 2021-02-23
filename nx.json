@@ -13,7 +13,7 @@
   "affected": {
     "defaultBase": "master"
   },
-  "npmScope": "nx-ci",
+  "npmScope": "nx-testing-ci",
   "tasksRunnerOptions": {
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
@@ -25,6 +25,13 @@
   "projects": {
     "backend": {
       "tags": []
+    },
+    "my-site": {
+      "tags": []
+    },
+    "my-site-e2e": {
+      "tags": [],
+      "implicitDependencies": ["my-site"]
     }
   }
 }
