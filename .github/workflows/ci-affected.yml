@@ -1,0 +1,16 @@
+name: Nx Affected
+on: push
+jobs:
+  ci-affected:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+      - run: npm ci
+      - run: npx nx affected --base=origin/main --target=test
+      - run: npx nx affected --base=origin/main --target=lint
+      - run: npx nx affected --base=origin/main --target=build --prod
