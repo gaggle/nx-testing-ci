@@ -6,7 +6,7 @@ import { BrowserRouter } from 'react-router-dom';
 import App from './app';
 
 describe('App', () => {
-  it('should render very successfully', () => {
+  it('should render super successfully', () => {
     const { baseElement } = render(
       <BrowserRouter>
         <App />
